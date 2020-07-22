@@ -26,6 +26,7 @@ public class PersonaGUI extends javax.swing.JInternalFrame {
      */
     private PersonaGUI() {
         initComponents();
+        this.setTitle("Persona");
         
     }
 

@@ -31,6 +31,7 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
      */
     private DepartamentoGUI() {
         initComponents();
+        this.setTitle("Departamento");
     }
 
     /**
