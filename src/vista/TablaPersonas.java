@@ -61,9 +61,17 @@ public class TablaPersonas extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Clave", "Nombre", "Direccion", "TElefono"
+                "Clave", "Nombre", "Direccion", "Telefono"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jMenu1.setText("Mostrar");

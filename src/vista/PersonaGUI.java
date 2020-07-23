@@ -217,7 +217,11 @@ public class PersonaGUI extends javax.swing.JInternalFrame {
         p.setDireccion(cmpDireccion.getText().trim());
         p.setTelefono(cmpTelefono.getText().trim());
         
-        daoPer.actualizar(p);
+        if (daoPer.actualizar(p)) {
+            JOptionPane.showMessageDialog(null, "Se actualizo con exito");
+        }else{
+            JOptionPane.showMessageDialog(null, "Ocurrio un problema");
+        }
         
         limpiar();
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -229,7 +233,12 @@ public class PersonaGUI extends javax.swing.JInternalFrame {
         p.setDireccion(cmpDireccion.getText().trim());
         p.setTelefono(cmpTelefono.getText().trim());
         
-        daoPer.borrar(p);
+        
+        if (daoPer.borrar(p)) {
+            JOptionPane.showMessageDialog(null, "Se borro con exito");
+        }else{
+            JOptionPane.showMessageDialog(null, "Ocurrio un problema");
+        }
         limpiar();
     }//GEN-LAST:event_jButton3ActionPerformed
 

@@ -42,7 +42,7 @@ public class DAOPersona implements IDAOGeneral<Persona> {
     @Override
     public boolean actualizar(Persona pojo) {
         res = false;
-        sql = "UPDATE persona SET nombre = '" + pojo.getNombre() + "', direccion = '" + pojo.getDireccion()+ "', telefono = '" + pojo.getTelefono()+ "' WHERE (Clave = " + pojo.getClave()+ ");";
+        sql = "UPDATE persona SET nombre = '" + pojo.getNombre() + "', direccion = '" + pojo.getDireccion()+ "', telefono = '" + pojo.getTelefono()+ "' WHERE (Clave = '" + pojo.getClave()+ "');";
         res = con.execute(sql);
         return res;
     }
