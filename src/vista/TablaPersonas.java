@@ -31,7 +31,7 @@ public class TablaPersonas extends javax.swing.JInternalFrame {
         return tablPer;
     }
     
-    /** Creates new form TablaPersonas1 */
+    /** Creates new form TablaPersonas */
     public TablaPersonas() {
         initComponents();
         modelo = (DefaultTableModel) jTable1.getModel();
