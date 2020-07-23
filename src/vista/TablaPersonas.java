@@ -120,7 +120,7 @@ public class TablaPersonas extends javax.swing.JInternalFrame {
 
     private void MostrarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarTodosActionPerformed
         // TODO add your handling code here:
-        daoPer.MostrarTodos(per, modelo);
+        daoPer.MostrarTodos(modelo);
     }//GEN-LAST:event_MostrarTodosActionPerformed
 
 

@@ -16,5 +16,5 @@ public interface IDAOGeneral<T> {
     
     public DefaultTableModel MostrarUno(T pojo, DefaultTableModel modelo);
     
-   public DefaultTableModel MostrarTodos(T pojo, DefaultTableModel modelo);
+   public DefaultTableModel MostrarTodos(DefaultTableModel modelo);
 }

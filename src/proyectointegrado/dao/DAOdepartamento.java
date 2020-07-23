@@ -60,7 +60,7 @@ public class DAOdepartamento implements IDAOGeneral<Departamento> {
     }
 
     @Override
-    public DefaultTableModel MostrarTodos(Departamento pojo, DefaultTableModel modelo) {
+    public DefaultTableModel MostrarTodos(DefaultTableModel modelo) {
         modelo.setRowCount(0);
         try {
             sql = "SELECT * FROM departamento;";

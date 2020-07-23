@@ -64,7 +64,7 @@ public class DAOPersona implements IDAOGeneral<Persona> {
     }
 
     @Override
-    public DefaultTableModel MostrarTodos(Persona pojo, DefaultTableModel modelo) {
+    public DefaultTableModel MostrarTodos(DefaultTableModel modelo) {
          try {
              modelo.setRowCount(0);
             sql = "SELECT * FROM persona;";

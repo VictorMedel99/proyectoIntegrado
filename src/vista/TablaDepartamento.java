@@ -125,7 +125,7 @@ public class TablaDepartamento extends javax.swing.JInternalFrame {
 
     private void MostrarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarTodosActionPerformed
         // TODO add your handling code here:
-        daoDep.MostrarTodos(dep,modelo);
+        daoDep.MostrarTodos(modelo);
     }//GEN-LAST:event_MostrarTodosActionPerformed
 
     private void MostrarUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarUnoActionPerformed
