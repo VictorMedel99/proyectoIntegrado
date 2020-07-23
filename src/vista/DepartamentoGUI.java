@@ -5,6 +5,8 @@
  */
 package vista;
 
+import java.awt.Component;
+import vista.Principal;
 import javax.swing.JOptionPane;
 import proyectointegrado.dao.*;
 
@@ -16,7 +18,7 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
 
     private static DepartamentoGUI depgui = null;
     private Departamento dep = new Departamento();
-    private DAOdepartamento daoDep = new DAOdepartamento();
+    private DAOdepartamento daoDep = (DAOdepartamento) FactoryDAO.create(FactoryDAO.TypeDAO.DEPARTAMENTO);
 
     public static DepartamentoGUI getInstace() {
         if (depgui == null) {
@@ -53,6 +55,7 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
         btoGuardar = new javax.swing.JButton();
         btoModificar = new javax.swing.JButton();
         btoEliminar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setClosable(true);
         setMinimumSize(new java.awt.Dimension(300, 400));
@@ -112,6 +115,18 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btoEliminar);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrar-propiedades.png"))); // NOI18N
+        jButton1.setToolTipText("Mostar");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButton1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -119,15 +134,15 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cmpClave, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cmpNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(cmpNombre))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cmpClave)))
+                .addGap(6, 6, 6))
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +156,7 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmpNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -195,6 +210,23 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btoEliminarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        TablaDepartamento dep = TablaDepartamento.getInstace();
+        dep.setVisible(true);
+        
+        for (Component com : Principal.jDesktopPane1.getComponents()) {
+            if (com.equals(dep)) {
+                return;
+            }
+            
+        }
+        Principal.jDesktopPane1.add(dep);
+        dep.toFront();
+        
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btoEliminar;
@@ -203,6 +235,7 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
     private javax.swing.JButton btoNuevo;
     private javax.swing.JTextField cmpClave;
     private javax.swing.JTextField cmpNombre;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

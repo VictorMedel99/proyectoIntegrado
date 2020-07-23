@@ -11,14 +11,6 @@ public class Persona {
     private String telefono;
     private Departamento departamento;
 
-    public Departamento getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(Departamento departamento) {
-        this.departamento = departamento;
-    }
-
     public String getClave() {
         return clave;
     }

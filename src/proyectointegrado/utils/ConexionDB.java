@@ -2,6 +2,7 @@ package proyectointegrado.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -42,6 +43,18 @@ public class ConexionDB {
         } catch (SQLException ex) {
             Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
 
+        }
+        return res;
+    }
+    
+    
+    public ResultSet executeQuery(String sql) {
+        ResultSet res = null;
+        try {
+            Statement st = conn.createStatement();
+            res = st.executeQuery(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionDB.class.getName()).log(Level.SEVERE, null, ex);
         }
         return res;
     }
