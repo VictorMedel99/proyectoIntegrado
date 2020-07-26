@@ -116,7 +116,7 @@ public class DepartamentoGUI extends javax.swing.JInternalFrame {
         jToolBar1.add(btoEliminar);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrar-propiedades.png"))); // NOI18N
-        jButton1.setToolTipText("Mostar");
+        jButton1.setToolTipText("Mostrar");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);

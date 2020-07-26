@@ -1,14 +1,10 @@
 package proyectointegrado.dao;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import proyectointegrado.utils.ConexionDB;
-
-
-
 /**
  *
  * @author victor
@@ -17,8 +13,6 @@ public class DAOPersona implements IDAOGeneral<Persona> {
     private ConexionDB con = ConexionDB.getInstace();
     private String sql;
     private boolean res;
-    
-    
     
     @Override
     public boolean guardar(Persona pojo) {
@@ -30,7 +24,6 @@ public class DAOPersona implements IDAOGeneral<Persona> {
         res = con.execute(sql);
         return res;
     }
-
     @Override
     public boolean borrar(Persona pojo) {
         res = false;
