@@ -29,7 +29,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
      */
     private EmpleadoGUI() {
         initComponents();
-        this.setTitle("Persona");
+        this.setTitle("Empleados");
     }
 
     /**
