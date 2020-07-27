@@ -41,7 +41,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jToolBar1" min="-2" pref="690" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
@@ -77,7 +77,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="432" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -133,7 +133,7 @@
             <Component class="javax.swing.JButton" name="btnNuevoRegistro">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/hiebernate/imagenes/new.png"/>
+                  <Image iconType="3" name="/imagenes/new.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Nuevo"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -147,7 +147,7 @@
             <Component class="javax.swing.JButton" name="btnGuardar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/hiebernate/imagenes/save.png"/>
+                  <Image iconType="3" name="/imagenes/save.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Guardar"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -161,7 +161,7 @@
             <Component class="javax.swing.JButton" name="btnActualizar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/hiebernate/imagenes/update.png"/>
+                  <Image iconType="3" name="/imagenes/update.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Modificar"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -175,7 +175,7 @@
             <Component class="javax.swing.JButton" name="btnBorrar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/hiebernate/imagenes/delete.png"/>
+                  <Image iconType="3" name="/imagenes/delete.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Borrar"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -189,7 +189,7 @@
             <Component class="javax.swing.JButton" name="btnMostar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/hiebernate/imagenes/mostrar-propiedades.png"/>
+                  <Image iconType="3" name="/imagenes/mostrar-propiedades.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Mostrar"/>
                 <Property name="focusable" type="boolean" value="false"/>

@@ -68,7 +68,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
 
         jToolBar1.setRollover(true);
 
-        btnNuevoRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hiebernate/imagenes/new.png"))); // NOI18N
+        btnNuevoRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/new.png"))); // NOI18N
         btnNuevoRegistro.setToolTipText("Nuevo");
         btnNuevoRegistro.setFocusable(false);
         btnNuevoRegistro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -80,7 +80,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnNuevoRegistro);
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hiebernate/imagenes/save.png"))); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/save.png"))); // NOI18N
         btnGuardar.setToolTipText("Guardar");
         btnGuardar.setFocusable(false);
         btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -92,7 +92,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnGuardar);
 
-        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hiebernate/imagenes/update.png"))); // NOI18N
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/update.png"))); // NOI18N
         btnActualizar.setToolTipText("Modificar");
         btnActualizar.setFocusable(false);
         btnActualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -104,7 +104,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnActualizar);
 
-        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hiebernate/imagenes/delete.png"))); // NOI18N
+        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/delete.png"))); // NOI18N
         btnBorrar.setToolTipText("Borrar");
         btnBorrar.setFocusable(false);
         btnBorrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -116,7 +116,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(btnBorrar);
 
-        btnMostar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hiebernate/imagenes/mostrar-propiedades.png"))); // NOI18N
+        btnMostar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mostrar-propiedades.png"))); // NOI18N
         btnMostar.setToolTipText("Mostrar");
         btnMostar.setFocusable(false);
         btnMostar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -142,7 +142,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,7 +169,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cmpTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,10 +233,6 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        // TODO add your handling code here:
-
-        
-
         if (cmpNombre.getText().trim() == "" && cmpApellidos.getText().trim() == "" && cmpDireccion.getText().trim() == "" && cmpTelefono.getText().trim() == "") {
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
         } else {
