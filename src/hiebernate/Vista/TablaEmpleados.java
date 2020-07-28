@@ -6,12 +6,9 @@
 package hiebernate.Vista;
 
 import hiebernate.Empleados;
-import hiebernate.HibernateUtils;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import org.hibernate.Query;
-import org.hibernate.Session;
+import hiebernate.DAOEmpleados;
 
 /**
  *
@@ -22,6 +19,7 @@ public class TablaEmpleados extends javax.swing.JInternalFrame {
     private static TablaEmpleados tablPer = null;
     private Empleados emp = new Empleados();
     private DefaultTableModel modelo;
+    private DAOEmpleados daoEmp;
 
     public static TablaEmpleados getInstace() {
         if (tablPer == null) {
@@ -34,7 +32,7 @@ public class TablaEmpleados extends javax.swing.JInternalFrame {
     /**
      * Creates new form TablaPersonas
      */
-    public TablaEmpleados() {
+    private TablaEmpleados() {
         initComponents();
         modelo = (DefaultTableModel) jTable1.getModel();
     }
@@ -117,14 +115,14 @@ public class TablaEmpleados extends javax.swing.JInternalFrame {
     private void ItenMostrarUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItenMostrarUnoActionPerformed
         // TODO add your handling code here:
         emp.setId(JOptionPane.showInputDialog("Ingrese la clave"));
-        MostrarUno(emp, modelo);
+        daoEmp.MostrarUno(emp, modelo);
 
 
     }//GEN-LAST:event_ItenMostrarUnoActionPerformed
 
     private void itenMostrarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itenMostrarTodosActionPerformed
         // TODO add your handling code here:
-        MostrarTodos(modelo);
+        daoEmp.MostrarTodos(modelo);
     }//GEN-LAST:event_itenMostrarTodosActionPerformed
 
 
@@ -136,26 +134,5 @@ public class TablaEmpleados extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-
-    private DefaultTableModel MostrarTodos(DefaultTableModel modelo) {
-        modelo.setRowCount(0);
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Query query = session.createQuery("SELECT em FROM Empleados em");
-        List<Empleados> empleados = query.list();
-
-        for (Empleados empleado : empleados) {
-            modelo.addRow(new Object[]{empleado.getId(), empleado.getNombre(), empleado.getApellidos(), empleado.getDireccion(), empleado.getTelefono()});
-        }
-
-        return modelo;
-    }
-
-    private DefaultTableModel MostrarUno(Empleados emp, DefaultTableModel modelo) {
-        modelo.setRowCount(0);
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Empleados empleado = (Empleados) session.createQuery("SELECT em FROM Empleados em WHERE id = '" + emp.getId() + "'").uniqueResult();
-        modelo.addRow(new Object[]{empleado.getId(), empleado.getNombre(), empleado.getApellidos(), empleado.getDireccion(), empleado.getTelefono()});
-        return modelo;
-    }
 
 }

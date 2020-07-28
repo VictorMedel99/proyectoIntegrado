@@ -1,5 +1,6 @@
 package hiebernate.Vista;
 
+import hiebernate.DAOEmpleados;
 import hiebernate.Empleados;
 import hiebernate.HibernateUtils;
 import java.awt.Component;
@@ -15,6 +16,7 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
 
     private static EmpleadoGUI pergui = null;
     private Empleados emp = new Empleados();
+    private DAOEmpleados daoEmp = new DAOEmpleados();
 
     public static EmpleadoGUI getInstace() {
         if (pergui == null) {
@@ -216,55 +218,19 @@ public class EmpleadoGUI extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        emp.setId(cmpId.getText().trim());
-        emp.setNombre(cmpNombre.getText().trim());
-        emp.setApellidos(cmpApellidos.getText().trim());
-        emp.setDireccion(cmpDireccion.getText().trim());
-        emp.setTelefono(cmpTelefono.getText().trim());
-
-        session.save(emp);
-        transaction.commit();
-
-        session.close();
-
+        daoEmp.guardar(emp,cmpId,cmpNombre,cmpApellidos,cmpDireccion,cmpTelefono);
         limpiar();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        if (cmpNombre.getText().trim() == "" && cmpApellidos.getText().trim() == "" && cmpDireccion.getText().trim() == "" && cmpTelefono.getText().trim() == "") {
-            JOptionPane.showMessageDialog(null, "Hay campos vacios");
-        } else {
-            Session session = HibernateUtils.getSessionFactory().openSession();
-            Transaction transaction = session.beginTransaction();
-            emp.setId(cmpId.getText().trim());
-            emp.setNombre(cmpNombre.getText().trim());
-            emp.setApellidos(cmpApellidos.getText().trim());
-            emp.setDireccion(cmpDireccion.getText().trim());
-            emp.setTelefono(cmpTelefono.getText().trim());
-
-            session.update(emp);
-            transaction.commit();
-
-            session.close();
-
+       daoEmp.actualizar(emp,cmpId,cmpNombre,cmpApellidos,cmpDireccion,cmpTelefono);
             limpiar();
-
-        }
 
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         // TODO add your handling code here:
-        Session session = HibernateUtils.getSessionFactory().openSession();
-            Transaction transaction = session.beginTransaction();
-            emp.setId(JOptionPane.showInputDialog(null, "Ingrese el Id del empleado a borrar"));
-            session.delete(emp);
-            transaction.commit();
-
-            session.close();
-
+        daoEmp.borrar(emp,cmpId,cmpNombre,cmpApellidos,cmpDireccion,cmpTelefono);
             limpiar();
     }//GEN-LAST:event_btnBorrarActionPerformed
 
