@@ -142,11 +142,10 @@ public class TablaEmpleados extends javax.swing.JInternalFrame {
         Session session = HibernateUtils.getSessionFactory().openSession();
         Query query = session.createQuery("SELECT em FROM Empleados em");
         List<Empleados> empleados = query.list();
-        
+
         for (Empleados empleado : empleados) {
             modelo.addRow(new Object[]{empleado.getId(), empleado.getNombre(), empleado.getApellidos(), empleado.getDireccion(), empleado.getTelefono()});
         }
-        
 
         return modelo;
     }
@@ -154,14 +153,8 @@ public class TablaEmpleados extends javax.swing.JInternalFrame {
     private DefaultTableModel MostrarUno(Empleados emp, DefaultTableModel modelo) {
         modelo.setRowCount(0);
         Session session = HibernateUtils.getSessionFactory().openSession();
-        Query query = session.createQuery("SELECT em FROM Empleados em WHERE id = '"+emp.getId()+"'");
-        List<Empleados> empleados = query.list();
-        
-        for (Empleados empleado : empleados) {
-            modelo.addRow(new Object[]{empleado.getId(), empleado.getNombre(), empleado.getApellidos(), empleado.getDireccion(), empleado.getTelefono()});
-        }
-        
-
+        Empleados empleado = (Empleados) session.createQuery("SELECT em FROM Empleados em WHERE id = '" + emp.getId() + "'").uniqueResult();
+        modelo.addRow(new Object[]{empleado.getId(), empleado.getNombre(), empleado.getApellidos(), empleado.getDireccion(), empleado.getTelefono()});
         return modelo;
     }
 
