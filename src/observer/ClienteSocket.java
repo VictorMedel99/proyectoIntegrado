@@ -32,8 +32,8 @@ public class ClienteSocket extends Observable implements Runnable{
         }
     }
     
-    public void escribir(String gasolina,String diesel){ 
-        emisor.write("Precio de la gasolina: "+gasolina+"\n"+"Precio del diesel: "+diesel+"\n");
+    public void escribir(String mensaje){ 
+        emisor.write("Mensaje: "+mensaje+"\n");
         emisor.flush();
     }
     

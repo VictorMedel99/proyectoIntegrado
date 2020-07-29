@@ -18,8 +18,7 @@ public class Principal extends javax.swing.JFrame implements Observer{
     }
     
     public void limpiar(){
-     txtGasolina.setText("");
-     txtDiesel.setText("");
+     txtMensaje.setText("");
     }
 
     /**
@@ -33,9 +32,7 @@ public class Principal extends javax.swing.JFrame implements Observer{
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtGasolina = new javax.swing.JTextField();
-        txtDiesel = new javax.swing.JTextField();
+        txtMensaje = new javax.swing.JTextField();
         btnIniciar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -44,16 +41,12 @@ public class Principal extends javax.swing.JFrame implements Observer{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Precio de combustibles");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+        jLabel1.setText("Observer");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
-        jLabel2.setText("Gasolina");
+        jLabel2.setText("Mensaje");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
-
-        jLabel3.setText("Diesel");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
-        getContentPane().add(txtGasolina, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 110, -1));
-        getContentPane().add(txtDiesel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 110, -1));
+        getContentPane().add(txtMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 110, -1));
 
         btnIniciar.setText("Iniciar");
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +62,7 @@ public class Principal extends javax.swing.JFrame implements Observer{
                 btnGuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
+        getContentPane().add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
 
         txtArea.setColumns(20);
         txtArea.setRows(5);
@@ -92,7 +85,7 @@ public class Principal extends javax.swing.JFrame implements Observer{
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         for (ClienteSocket cliente : Servidor.getlstClientes()) {
-            cliente.escribir(txtGasolina.getText(),txtDiesel.getText());
+            cliente.escribir(txtMensaje.getText());
             
         }
         limpiar();
@@ -139,11 +132,9 @@ public class Principal extends javax.swing.JFrame implements Observer{
     private javax.swing.JButton btnIniciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtArea;
-    private javax.swing.JTextField txtDiesel;
-    private javax.swing.JTextField txtGasolina;
+    private javax.swing.JTextField txtMensaje;
     // End of variables declaration//GEN-END:variables
 
     @Override
