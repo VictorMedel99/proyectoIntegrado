@@ -19,7 +19,7 @@ public class TablaEmpleados extends javax.swing.JInternalFrame {
     private static TablaEmpleados tablPer = null;
     private Empleados emp = new Empleados();
     private DefaultTableModel modelo;
-    private DAOEmpleados daoEmp;
+    private DAOEmpleados daoEmp = new DAOEmpleados();
 
     public static TablaEmpleados getInstace() {
         if (tablPer == null) {
