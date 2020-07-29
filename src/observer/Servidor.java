@@ -17,7 +17,7 @@ public class Servidor extends Thread{
     private boolean isStoped =false;
     private Observer observer;
     
-    public Servidor(Observer observer) throws IOException{ //Desencadenar
+    public Servidor(Observer observer) throws IOException{
         server = new ServerSocket(7000);
         this.observer = observer;
     }
